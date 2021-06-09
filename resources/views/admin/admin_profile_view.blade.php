@@ -35,7 +35,7 @@
                   </a>
                   <h4 class="mt-2 mb-0"><a class="hover-primary text-white" href="#">{{ $adminData->name }}</a></h4>
 
-                  <a href="" style="float:  right;" class="btn btn-rounded btn-success mb-5">Edit Profile</a>
+                  <a href="{{ route('admin.profile.edit') }}" style="float:  right;" class="btn btn-rounded btn-success mb-5">Edit Profile</a>
 
                   <span><i class="fa fa-map-marker w-20"></i> {{ $adminData->email }}</span>
                 </div>
