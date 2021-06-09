@@ -1,6 +1,9 @@
 @extends('admin.admin-master')
-
 @section('admin')
+<script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
 <div class="container-full">
 
     <!-- Main content -->
@@ -45,7 +48,8 @@
                                 <div class="form-group">
                                     <h5>Profile Image <span class="text-danger">*</span></h5>
                                     <div class="controls">
-                                        <input type="file" name="profile_photo_path" class="form-control" required=""> <div class="help-block"></div></div>
+                                        <input type="file" name="profile_photo_path" class="form-control" required="" id="image">
+                                    </div>
                                 </div>     
                             </div><!-- end_cole_md_6 -->
                             <div class="col-md-6">
@@ -53,7 +57,7 @@
                                 {{ (!empty( $adminData->profile_photo_path )) ? 
                                     url('upload/admin_images/' . $adminData->profile_photo_path ) :
                                     url('upload/no_image.jpg')                         
-                                 }}" style="width:100px; height: auto;" alt="">
+                                 }}" style="width:100px; height: auto;" alt="" id="showImage">
                             </div><!-- end_cole_md_6 -->
                         </div><!-- end_row -->
 
@@ -78,4 +82,16 @@
        </section>
     <!-- /.content -->
   </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#image').change(function(e){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#showImage').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(e.target.files['0']);
+        });
+    });
+</script>
   @endsection
