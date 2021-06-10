@@ -18,7 +18,8 @@
            <div class="box-body">
              <div class="row">
                <div class="col">
-                   <form novalidate="">
+                   <form method="POST" action="{{ route('admin.profile.store' )}}" enctype="multipart/form-data">
+                    @csrf
                      <div class="row">
                        <div class="col-12">
                            
@@ -54,8 +55,8 @@
                             </div><!-- end_cole_md_6 -->
                             <div class="col-md-6">
                                 <img class="avatar avatar-xxl avatar-bordered" src="
-                                {{ (!empty( $adminData->profile_photo_path )) ? 
-                                    url('upload/admin_images/' . $adminData->profile_photo_path ) :
+                                {{ (!empty( $editData->profile_photo_path )) ? 
+                                    url('upload/admin_images/' . $editData->profile_photo_path ) :
                                     url('upload/no_image.jpg')                         
                                  }}" style="width:100px; height: auto;" alt="" id="showImage">
                             </div><!-- end_cole_md_6 -->
