@@ -49,7 +49,7 @@
                                 <div class="form-group">
                                     <h5>Profile Image <span class="text-danger">*</span></h5>
                                     <div class="controls">
-                                        <input type="file" name="profile_photo_path" class="form-control" required="" id="image">
+                                        <input type="file" name="profile_photo_path" class="form-control" id="image">
                                     </div>
                                 </div>     
                             </div><!-- end_cole_md_6 -->
