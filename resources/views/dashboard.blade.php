@@ -1,15 +1,40 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('frontend.main_master')
+<!-- -->
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
+@section('content')
+<div class="body-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <br>
+                <img class="card-img-top" style="border-radius: 50%; height: 100%; width: 100%;" src="
+                {{ (!empty( $editData->profile_photo_path )) ? 
+                    url('upload/admin_images/' . $editData->profile_photo_path ) :
+                    url('upload/no_image.jpg')                         
+                 }}" alt="">
+                <br>
+                <br>
+                <ul class="list-group list-group-flush">
+                    <a href="" class="btn btn-primary btn-sm btn-block">Home</a>
+                    <a href="" class="btn btn-primary btn-sm btn-block">Profile Update</a>
+                    <a href="" class="btn btn-primary btn-sm btn-block">Change Password</a>
+                    <a href="" class="btn btn-primary btn-sm btn-block">Logout</a>
+                </ul>
+
+            </div>
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="test-center">
+                        <span class="text-danger">Hi, {{ Auth::user()->name }}</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-</x-app-layout>
+</div>
+
+@endsection
