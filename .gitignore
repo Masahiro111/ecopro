@@ -4,6 +4,7 @@
 /public/assets
 /public/theme
 /public/frontend
+/public/upload
 /storage/*.key
 /vendor
 .env

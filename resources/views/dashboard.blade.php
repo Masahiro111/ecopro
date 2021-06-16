@@ -8,8 +8,8 @@
             <div class="col-md-2">
                 <br>
                 <img class="card-img-top" style="border-radius: 50%; height: 100%; width: 100%;" src="
-                {{ (!empty( $editData->profile_photo_path )) ? 
-                    url('upload/admin_images/' . $editData->profile_photo_path ) :
+                {{ (!empty( $user->profile_photo_path )) ? 
+                    url('upload/user_images/' . $user->profile_photo_path ) :
                     url('upload/no_image.jpg')                         
                  }}" alt="">
                 <br>
