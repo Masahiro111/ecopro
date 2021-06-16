@@ -24,6 +24,6 @@ class IndexController extends Controller
     {
         $id = Auth::user()->id;
         $user = User::find($id);
-        return view('frontend.frofile.user_profile', compact('user'));
+        return view('frontend.profile.user_profile', compact('user'));
     }
 }
