@@ -31,7 +31,7 @@
                         <span class="text-danger">Change Password</span>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('user.profile.store')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('user.password.update')}}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
