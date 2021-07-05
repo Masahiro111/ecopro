@@ -77,3 +77,6 @@ Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdat
 
 Route::get('/brand/view', [BrandController::class, 'BrandView'])
     ->name('all.brand');
+
+Route::get('/brand/store', [BrandController::class, 'BrandStore'])
+    ->name('brand.store');
